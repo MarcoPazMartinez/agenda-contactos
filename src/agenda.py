@@ -51,6 +51,15 @@ def eliminar_contacto():
             return
     print(f"❌ No se encontró el contacto '{nombre}'.")
 
+def guardar_contactos():
+    if len(contactos) == 0:
+        print("📋 No hay contactos para guardar.")
+        return
+    with open("contactos.txt", "w") as archivo:
+        for c in contactos:
+            archivo.write(f"{c['nombre']},{c['telefono']}\n")
+    print(f"💾 {len(contactos)} contacto(s) guardados en 'contactos.txt'.")
+
 def mostrar_menu():
     print("\n===== AGENDA DE CONTACTOS =====")
     print("1. Agregar contacto")
@@ -77,7 +86,7 @@ while True:
         elif opcion == "4":
             eliminar_contacto()
         elif opcion == "5":
+            guardar_contactos()
             print("\n¡Hasta luego!")
             break
-        else:
-            print("⚠️ Opción no implementada todavía.")
+# prueba git
