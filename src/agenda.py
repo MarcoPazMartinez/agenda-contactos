@@ -80,4 +80,6 @@ while True:
             print("\n¡Hasta luego!")
             break
         else:
-            print("⚠️ Opción no implementada todavía.")
+            print("⚠️ Opción no válida.")
+
+#cambio
